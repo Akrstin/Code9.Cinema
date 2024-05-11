@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CinemaDbContext>(options =>
     options.UseInMemoryDatabase("Cinemas"));
 
+builder.Services.AddScoped<ICinemaRepository, CinemaDbContextRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
