@@ -31,5 +31,6 @@ namespace Code9.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
             return cinema;
         }
+
     }
 }
