@@ -63,5 +63,15 @@ namespace Code9.API.Controllers
             }
             return Ok(cinema);
         }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteCinema([FromRoute] Guid id)
+        {
+            var command = new DeleteCinemaCommand { Id = id };
+
+            await _mediator.Send(command);
+
+            return NoContent();
+        }
     }
 }
