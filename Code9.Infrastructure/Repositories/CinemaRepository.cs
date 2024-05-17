@@ -31,6 +31,12 @@ namespace Code9.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
             return cinema;
         }
+        public async Task DeleteCinema(Cinema cinema)
+        {
+            _dbContext.Remove(cinema);
+
+            await _dbContext.SaveChangesAsync();
+        }
         public async Task<Cinema> GetCinema(Guid id)
         {
             return await _dbContext.Cinemas.FirstOrDefaultAsync(x => x.Id == id);

@@ -8,6 +8,8 @@ namespace Code9.Domain.Interfaces
         public Task<Cinema> AddNewCinema(Cinema cinema);
         public Task<Cinema> UpdateCinema(Cinema cinema);
 
+        public Task DeleteCinema(Cinema cinema);
+
         public Task<Cinema> GetCinema(Guid id);
     }
 }
