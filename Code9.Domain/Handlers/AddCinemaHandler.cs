@@ -20,10 +20,18 @@ namespace Code9.Domain.Handlers
 
         }
         
-        public Task<Cinema> Handle(AddCinemaCommand request, CancellationToken cancellationToken)
+        public async Task<Cinema> Handle(AddCinemaCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            
+            var cinema = new Cinema
+            {
+                Name = request.Name,
+                City = request.City,
+                Street = request.Street,
+                NumberOfAuditoriums = request.NumberOfAuditoriums
+            };
+
+            return await _cinemaRepository.AddNewCinema(cinema);
+
         }
     }
 }

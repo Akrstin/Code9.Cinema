@@ -6,6 +6,7 @@ namespace Code9.API.Models
     {
         [Required]
         [MinLength(3)]
+        [StringLength(15, ErrorMessage = "The cinema name cannot exceed 15 characters. ")]
 
         public string City { get; set; }
         [Required]

@@ -37,10 +37,10 @@ namespace Code9.API.Controllers
                 Street = addCinemaRequest.Street
             };
 
-            var result = _mediator.Send(command);
-        
+            var result = await _mediator.Send(command);
 
-            return Ok(result);
+            //return Ok(result);
+            return CreatedAtAction(nameof(GetAllCinemas), new { id = result.Id }, result);
         }
     }
 }
